@@ -1,0 +1,244 @@
+﻿
+vi:
+  about_us: "Chúng tôi"
+  layouts:
+    application:
+      title: "KBST Shop"
+    header:
+      name_of_web: "KBST PHUOT"
+      search: "Tìm kiếm"
+      sign_up: "ĐĂNG KÝ"
+      sign_in: "ĐĂNG NHẬP"
+      account: "Tài khoản"
+      show_all_cart: "Hiển thị giỏ hàng"
+      recent: "Sản phẩm đã xem"
+      introduce: "Giới thiệu"
+      new: "Tin mới"
+      help: "Giúp đỡ"
+      contact: "Liên hệ"
+      send: "Gửi"
+      search_holder: "tìm kiếm..."
+      cart: "Sản phẩm"
+      order_history: "DS Đơn hàng"
+      logout: "Đăng xuất"
+      profile: "TT Cá nhân"
+      user: "Quản lý User"
+      add: "Thêm User mới"
+      cate: "Quản lý sản phẩm"
+    footer:
+      cright: "Copyright © Footer E-commerce Plugin 2019. All right reserved."
+    navigation_menu:
+      menu: "Menu"
+      category: "Danh mục"
+      price: "Gía"
+      rating: "Đánh gía"
+      order: "Sắp xếp"
+      by: "Theo"
+      dashboard: "Bảng điều khiển"
+      user: "Khách hàng"
+      product: "Sản phấm"
+      suggestion: "Gợi ý"
+    carts:
+      update: "Thay đổi"
+      delete: "Xóa"
+      total_price: "Tổng gía:"
+      confirm: "Bạn chăc chắn muốn xóa sản phẩm %{name} trong giỏ hàng?"
+      no_cart: "Không có sản phảm trong giỏ của bạn. Vui lòng quay lại và chọn sản phẩm."
+      go_back: "Trở lại"
+      update_success: "Thay đổi thành công"
+      update_failed: "Thay đổi thất bại"
+      deleted: "Đã xóa thành công"
+      delete_failed: "Xóa thất bại"
+  static_pages:
+    home:
+      name_of_web: "KBST PHUOT ONLINE"
+      introduce: "Cửa hàng gồm những sản phẩm chất lượng nhất"
+      add2cart: "Thêm vào giỏ hàng"
+      view: "Hiển thị chi tiết"
+      getmore: "Xem thêm"
+      price: "Giá: "
+      quanlity: "SL:"
+    about:
+      name_page: "CHÚNG TÔI"
+      introduce: "Chúng tôi là team KBST"
+      luck: "Chúc bạn may mắn!"
+    help:
+      name_page: "GIÚP ĐỠ"
+      content: "Hãy hỏi chúng tôi những vấn đề mà bạn quan tâm!"
+    contact:
+      name_page: "LIÊN HỆ"
+      content: "Liên hệ chúng tôi qua fb:Kiều Bùi nhé!!"
+  users:
+    edit:
+      update_profile: "Cập nhật thông tin cá nhân"
+    new:
+      signup_page_title: "Tạo Tài khoản mới"
+      signup_box_title: "Nhập thông tin cá nhân của bạn"
+      pass_confirm: "Xác nhận mật khẩu"
+      btn_account: "Tạo tài khoản"
+      question: "Bạn đã lập Tài khoản ?"
+      signin: "Đăng nhập"
+    show:
+      page_error: "Không tìm thấy trang"
+  shared:
+
+
+
+
+
+    error:
+      contain: "Form gặp"
+      furalize-error: "error"
+  sessions:
+    new:
+      signin_box_title: "ĐĂNG NHÂP"
+      question: "Bạn chưa có Tài khoản ?"
+      signup: "Đăng ký"
+      remember: "Remember me"
+  product:
+    show:
+      rating: "Đánh gía"
+      count: "người đã đánh gía"
+      details: "Chi tiết Sản phẩm"
+      average: "Trung bình "
+      product_price: "%{price}"
+      share: "Chia sẻ"
+      product_quanlity: "%{quanlity} cái"
+    index:
+      sort: "Sắp xếp"
+      result: "Kết quả tìm kiếm: "
+  order:
+    all: "Tất cả"
+    completed: "Bạn đã đặt hàng thành công"
+    order_failed: "Lỗi! Đặt hàng thất bại"
+    order_not_found: "Lỗi! Không tìm thấy đơn hàng"
+    checkout: "Đặt hàng"
+    update_title: "Hoàn thành đơn đặt hàng"
+    order_details: "Chi tiết đơn hàng"
+    your_orders: "Danh sách Đặt hàng của bạn"
+    state: "Trạng thái"
+    cancel: "Đơn hàng bị hủy"
+    processing: "Đang xử lý"
+    done: "Đã hoàn thành"
+    show_title: "Chi tiết đơn đặt hàng"
+    delete_success: "Đơn đặt hàng đã xóa thành công"
+    delete_failed: "Xóa Đơn hàng thất bại"
+    confirm_success: "Xác nhận đã thanh toán thành công"
+    create_failed: "Tạo hóa đơn mới thất bại"
+    login: "Bạn phải đăng nhập trước khi thực hiện thanh toán"
+    create_success: "Bạn đã đặt hàng thành công"
+  controller:
+    user:
+      email_check: "Kiểm tra mail để hoàn thành việc đăng ký tài khoản!"
+    session:
+      login_fails: "Email hoặc mật khẩu không chính xác"
+      require_activated: "Tài khoản chưa đưọc kích hoạt. Kiểm tra email để hoàn thành đăng ký tài khoản."
+    mailer:
+      subject: "Xác minh tài khoản"
+      greeting: "Chào"
+      content: "Chào mừng bạn đến với KBST Shop! Click vào link dưới để kích hoạt tài khoản:"
+      link_active: "Click vào đây để kích hoạt tài khoản"
+      account_activated: "Tài khoản đã kích hoạt"
+      activated_fails: "Tài khoản kích hoạt không thành công"
+    product:
+      no_product: "Sản phẩm không tồn tại"
+      deleted: "Sản phẩm xóa thành công"
+      delete_failed: "Xóa thất bại"
+  admin:
+    update: "Cập nhật"
+    all_user: "Danh sách khách hàng"
+    profile: "Thông tin cá nhân"
+    delete: "Delete"
+    confirm-delete: "Bạn muốn xóa?"
+    avatar: "Ảnh đại diện"
+    name: "Tên"
+    email: "Email"
+    address: "Địa chỉ"
+    password: "Mật khẩu"
+    c-password: "Xác nhận mật khảu"
+    role: "Quyền"
+    r-admin: "Người quản trị"
+    r-user: "Khách hàng"
+    change: "Cập nhật thay đổi"
+    back: "Trở lại"
+    cancel: "Hủy"
+    action: "Hành động"
+    success: "Cập nhật thành công"
+    error: "Cập nhật thất bại"
+    category_name: "Tên danh mục"
+    sub_categories: "Danh mục con"
+    root_category: "Danh sách danh mục"
+    no_category: "Không tìm thấy danh mục"
+    update_category: "Cập nhật danh mục"
+    description: "Mô tả"
+    new_category: "Thêm danh mục"
+    create: "Tạo mới"
+    parent_category: "Danh mục cha"
+    back: "Trở lại"
+    all_products: "Danh sách sản phẩm"
+    new_product: "Tạo mới sản phẩm"
+    no_product: "Không tìm thấy sản phẩm"
+    hot: "Sản phẩm hot"
+    none: "Thông thường"
+    quanlity: "Số lượng"
+    order: "Đơn đặt hàng"
+    price: "Giá"
+    receiver: "Người nhận"
+    receiving_address: "Địa chỉ nhận"
+    note: "Ghi chú"
+    index: "STT"
+    total_payment: "Tổng tiền"
+    complete: "Đặt hàng"
+    confirm : "Duyệt Đơn"
+    date: "Ngày đặt"
+    detail: "Chi tiết"
+    confirm: "Duyệt Đơn"
+    deleted: "Xóa thành công"
+    delete_failed: "Xóa thất bại"
+    updated: "Cập nhật thành công"
+    update_failed: "Cập nhật thất bại"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            user_name:
+              blank: "Tên không thể trống"
+              taken: "Tên đã được sử dụng"
+            email:
+              blank: "Email không thể trống"
+              invalid: "Email không hợp lệ!"
+              taken: "Email đã được sử dụng"
+            password:
+              blank: "Mật khẩu không thể trống"
+              invalid: "Mật khẩu không hợp lệ"
+            password_confirmation:
+              confirmation: "Mật khẩu không khớp"
+            address:
+              blank: "Địa chỉ không được trống"
+        product:
+          attributes:
+            product_name:
+              blank: "Tên không thể trống"
+              taken: "Tên đã được sử dụng"
+            product_image:
+              blank: "Ban phải thêm ảnh"
+            product_details:
+              blank: "Mô tả chi tiết không thể trống"
+            price_normal:
+              blank: "Gía không thể trống"
+              not_a_number: "Gía phải nhập số"
+            quanlity:
+              blank: "Số lượng không thể trống"
+              not_a_number: "Số lượng phải là số"
+        category:
+          attributes:
+            name:
+              blank: "Tên không trống"
+              taken: "Tên đã được sử dụng"
+        order:
+          attributes:
+            receiver:
+              blank: "Bạn phải điền tên ngưòi nhận"
+            receiving_address:
+              blank: "Bạn phải điền địa chỉ nhận hàng"

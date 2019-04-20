@@ -1,0 +1,14 @@
+client:
+  host: "localhost:3000"
+  number_product: 12
+  number_invalid: 0
+  limit_view: 3
+  num_index: 1
+server:
+  session:
+    remember_me: "1"
+  root_category_id: "0"
+  min_payment: 0
+  min_quanlity: 1
+  min_size: 0
+  min_average: 0

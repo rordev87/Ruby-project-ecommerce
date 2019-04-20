@@ -1,0 +1,99 @@
+<h1 class="admin-title">
+  <%= t "order.update_title" %>
+</h1>
+<hr/>
+<div class="admin-content">
+  <div class="row">
+
+    <%= form_for @order do |f| %>
+    <div class="col-md-6">
+      <%= render "shared/error_messages", object: @order %>
+
+      <%= f.label I18n.t("admin.name") %>
+      <%= f.label :user_name, current_user.user_name,
+      class: "form-control" %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <br/>
+
+      <%= f.label I18n.t("admin.receiver") %>
+      <%= f.text_field :receiver, class: "form-control" %>
+      <br/>
+
+      <%= f.label I18n.t("admin.receiving_address") %>
+      <%= f.text_field :receiving_address, class: "form-control" %>
+      <br/>
+
+      <%= f.label I18n.t("admin.note") %>
+      <%= f.text_area :note, class: "form-control" %>
+      <br/>
+
+      <%= f.label I18n.t("admin.total_payment") %>
+      <%= f.text_field :total_payment, value: get_total_payment,
+      class: "form-control", readonly: true %>
+      <br/>
+
+      <%= f.hidden_field :state, value: Order.types[:processing] %>
+
+      <button  id="done" class="btn btn-primary"><%= t("admin.complete") %></button>
+    </div>
+    <% end %>
+    <div class="col-md-6">
+      <h3>
+        <%= I18n.t("order.order_details") %>
+      </h3>
+      <table class="table table-bordered">
+        <tr>
+          <th>
+            <%= t "admin.index" %>
+          </th>
+          <th>
+            <%= t "admin.name" %>
+          </th>
+          <th>
+            <%= t "admin.quanlity" %>
+          </th>
+          <th>
+            <%= t "admin.price" %>
+          </th>
+        </tr>
+        <%= render partial: "product_item", collection: @products %>
+        <tr>
+          <td colspan="3">
+            <b>
+              <%= t "admin.total_payment" %>
+            </b>
+          </td>
+          <td>
+            <b>
+              <%= get_total_payment %>
+            </b>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1 col-md-offset-5">
+    <%= link_to I18n.t("admin.back"),carts_path,
+    class: "btn btn-danger" %>
+   
+  </div>
+</div>
+<style>
+ #done{  background-color:  #f44336; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+
+  }
+
+
+</style>

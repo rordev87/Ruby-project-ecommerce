@@ -1,0 +1,42 @@
+<div class="well">
+  <div class="row">
+    <div class="col-xs-8 col-md-6">
+      <h4><%= product.product_name %></h4>
+    </div>
+    <div class="col-xs-4 col-md-6">
+      <%= form_tag update_cart_path, remote: true do %>
+        <div class="row">
+          <div class="col-xs-4">
+            <%= hidden_field_tag :product_id, product.id %>
+            <%= number_field_tag :quanlity, get_quanlity(product.id),
+              class: "form-control", min: Settings.server.min_quanlity %>
+          </div>
+          <div class="col-xs-4">
+            <h4><span class="glyphicon glyphicon-remove"></span>
+              <%= product.price_normal %>
+            </h4>
+          </div>
+          <div class="col-xs-4 text-right">
+            <h4>
+              <span>
+                <%= get_price(product.id, get_quanlity(product.id)) %>
+              </span>
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4 text-right">
+            <%= submit_tag I18n.t("layouts.carts.update"),
+              class: "btn btn-primary" %>
+          </div>
+          <div class="col-xs-4 text-right">
+            <%= link_to "Delete", destroy_cart_path(product_id: product.id),
+              method: "delete",
+              data: {confirm: I18n.t("admin.confirm-delete")},
+              class: "btn btn-danger" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

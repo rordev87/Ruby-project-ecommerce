@@ -1,0 +1,31 @@
+<% provide :title, t("view.users.edit.update") %>
+<h1>
+  <%= t "update_your_profile" %>
+</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <%= form_for @user do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    
+    <%= f.label :name %>
+    <%= f.text_field :user_name, class: "form-control" %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control" %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+
+    <%= f.label :password_confirmation, t("confirmation") %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+
+      <button type="submit" id="submitButton" class="btn btn-primary">
+        <%= t "Submit" %>
+      </button>
+    <% end %>
+  </div>
+</div>

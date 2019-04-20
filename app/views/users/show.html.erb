@@ -1,0 +1,36 @@
+<% provide :title, t("view.users.show.profile") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <div class="container-fluid well span6">
+      <div class="row-fluid">
+        <section class= "user_info">
+          <div class="span2" >
+           <img src="/assets/new_user.png"/>
+          </div>
+          <div class="span9">
+            <h3>
+              <%= @user.user_name %>
+            </h3>
+            <% if !current_user.is_admin? %>
+              <%= link_to t("view.users.edit.update_profile"),
+            edit_user_path(current_user), class: "btn btn-info" %>
+            <% end %>
+			 <% if current_user.is_admin? %>
+              <%= link_to t("view.users.edit.update_profile"),
+            edit_user_path(@user), class: "btn btn-info" %>
+            <% end %>
+
+            <h6>
+
+              <%= t "email_:" %> <%= @user.email %>
+            </h6>
+            <h6>
+              <%= t "address_:" %> <%= @user.address %>
+            </h6>
+           
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

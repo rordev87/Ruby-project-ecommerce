@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <%= get_index product_item_counter %>
+  </td>
+  <td>
+    <%= product_item.product_name %>
+  </td>
+  <td>
+    <%= get_quanlity(product_item.id) %>
+  </td>
+  <td>
+    <%= get_price(product_item.id, get_quanlity(product_item.id)) %>
+  </td>
+</tr>

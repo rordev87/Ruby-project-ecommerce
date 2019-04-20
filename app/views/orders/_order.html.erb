@@ -1,0 +1,31 @@
+<tr>
+  <td>
+    <%= get_index order_counter %>
+  </td>
+  <% if admin? %>
+    <td>
+      <%= order.user.user_name %>
+    </td>
+  <% end %>
+  <td>
+    <%= order.total_payment %>
+  </td>
+  <td>
+    <%= order.updated_at %>
+  </td>
+  <td>
+    <%= get_state order.state %>
+  </td>
+  <td>
+    <%= link_to I18n.t("admin.detail"), order_path(order.id),
+      class: "btn btn-primary" %>
+  </td>
+  <td>
+     <%if order.state!=Order.types[:done] %>
+    <%= link_to I18n.t("admin.delete"), order,
+      data: {confirm: I18n.t("admin.confirm-delete")},
+      method: :delete, class: "btn btn-danger" %>
+    <%end%>
+
+  </td>
+</tr>

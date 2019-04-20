@@ -1,0 +1,12 @@
+<div class="shopping-cart">
+  <% @products.each do |product| %>
+    <%= render "carts/cart_row", product: product %>
+  <% end %>
+</div>
+<div class="total_payment">
+  <%= render "carts/total_payment" %>
+</div>
+<div class="text-right">
+  <%= link_to I18n.t("order.checkout"), new_order_path,
+    class: "btn btn-primary" %>
+</div>

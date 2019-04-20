@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\models",
+    "\\views",
+    "\\views\\carts",
+    "\\views\\categories",
+    "\\views\\orders",
+    "\\views\\products",
+    "\\views\\sessions",
+    "\\views\\shared",
+    "\\views\\static_pages",
+    "\\views\\users",
+    "\\views\\user_mailer"
+  ],
+  "SelectedNode": "\\views\\static_pages\\contact.html.erb",
+  "PreviewInSolutionExplorer": false
+}

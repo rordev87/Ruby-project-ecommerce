@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+  <title><%= t ".title" %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="container">
+        <%= render "layouts/header" %>
+        <div class="row slider">
+          <%= render "layouts/slider" %>
+        </div>
+        <div class="row page-content">
+          <div class="col-md-3" id="menu-nav">
+            <div class="row">
+              <%= render "layouts/navigation_menu" %>
+            </div>
+          </div>
+          <div class="col-md-9 content">
+            <% flash.each do |message_type, message| %>
+              <div class="alert alert-<%= message_type %>"><%= message %></div>
+            <% end %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
+</html>

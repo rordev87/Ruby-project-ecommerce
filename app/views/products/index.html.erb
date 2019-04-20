@@ -1,0 +1,50 @@
+<div class="category-featured digital">
+  <nav class="navbar nav-menu result-brand">
+    <div class="navbar-brand">
+      <span>
+        <%= I18n.t "product.index.result" %>
+      </span>
+      <% if !@category.nil? %>
+        <%= @category.name %>
+      <% end %>
+    </div>
+  </nav>
+  <div class="product-featured clearfix">
+    <div class="row">
+      <%= will_paginate @products %>
+      <div class="col-sm-12 category-product">
+        <% @products.each do |product| %>
+        <div class="col-sm-4">
+          <div class="product-item">
+            <div class="pi-img-wrapper">
+              <%= image_tag product.product_image,
+              class: "img-responsive" %>
+              <div>
+                <%= link_to product_path(product.id),
+                class: "btn" do %>
+                <%= t "static_pages.home.view" %>
+                <% end %>
+              </div>
+            </div>
+            <h3>
+              <%= link_to product.product_name,
+              product_path(product.id)  %>
+            </h3>
+            <div class="pi-price">
+              <%= t("product.show.product_price",
+              price: product.price_normal) %>
+            </div>
+            
+              <div class="sticker sticker-new">
+            </div>
+              <div>
+                <%= render "layouts/add_cart", product: product %>
+              </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <%= will_paginate @products %>
+  </div>
+</div>

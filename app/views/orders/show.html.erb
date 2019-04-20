@@ -1,0 +1,140 @@
+<h1 class="admin-title">
+  <%= t "order.update_title" %>
+</h1>
+<hr/>
+<div class="admin-content">
+  <div class="row">
+
+    <%= form_for @order do |f| %>
+    <div class="col-md-6">
+      <%= render "shared/error_messages", object: @order %>
+
+      <%= f.label I18n.t("admin.name") %>
+      <%= f.label :user_name, current_user.user_name,
+      class: "form-control" %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <br/>
+
+      <%= f.label I18n.t("admin.receiver") %>
+      <%= f.text_field :receiver, class: "form-control", readonly: true %>
+      <br/>
+
+      <%= f.label I18n.t("admin.receiving_address") %>
+      <%= f.text_field :receiving_address, class: "form-control",
+      readonly: true %>
+      <br/>
+
+      <%= f.label I18n.t("admin.note") %>
+      <%= f.text_area :note, class: "form-control", readonly: true %>
+      <br/>
+      
+      <%= f.label I18n.t("admin.total_payment") %>
+      <%= f.text_field :total_payment, class: "form-control",
+      readonly: true %>
+      <br/>
+      
+      <%= f.hidden_field :state, value: Order.types[:processing] %>
+
+      <% if @order.state == Order.types[:processing] && admin? %>
+      <button onclick=accept() id="done" class="btn btn-primary"><%= t("admin.confirm") %></button>
+      <button onclick=deny() id="cancel" class="btn btn-danger">Cancel</button>
+      <% end -%>
+    </div>
+    <% end %>
+    <div class="col-md-6">
+      <h3>
+        <%= t "order.order_details" %>
+      </h3>
+      <table class="table table-bordered">
+        <tr>
+          <th>
+            <%= t "admin.index" %>
+          </th>
+          <th>
+            <%= t "admin.name" %>
+          </th>
+          <th>
+            <%= t "admin.quanlity" %>
+          </th>
+          <th>
+            <%= t "admin.price" %>
+          </th>
+        </tr>
+        <%= render partial: "order_detail", collection: @order.order_details %>
+        <tr>
+          <td colspan="3">
+            <b>
+              <%= t "admin.total_payment" %>
+            </b>
+          </td>
+          <td>
+            <b>
+              <%= @order.total_payment %>
+            </b>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1 col-md-offset-5">
+    <%= link_to I18n.t("admin.back"), orders_path(user_id: current_user.id),
+    class: "btn btn-danger" %>
+  </div>
+</div>
+<style>
+  #cancel{
+ background-color:   #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+  #done{  background-color:   #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+
+  }
+</style>
+
+  <script>
+      var pageURL = $(location).attr("href");
+
+  function accept(){
+    $.ajax({
+      url: pageURL,
+      type: 'patch',
+      data: {value: 'accept' }
+
+    })
+    $.ajax().done(function(){
+      window.location.href = 'http://localhost:3000/orders?user_id=2';
+
+    })
+  }
+  function deny(){
+    $.ajax({
+      url: pageURL,
+      type: 'patch',
+      data: {value: 'deny'}
+    })
+    $.ajax().done(function(){
+      window.location.href = 'http://localhost:3000/orders?user_id=2';
+
+    })
+  }
+  </script>

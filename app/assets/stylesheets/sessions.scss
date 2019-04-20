@@ -1,0 +1,20 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.container-signin {
+  margin-top: 60px;
+  min-height: 600px;
+  opacity: 0.7;
+}
+.error_message {
+  text-align: center;
+  color: #CB0101;
+}
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,44 @@
+<h1 class="admin-title"><%= I18n.t("order.your_orders") %></h1>
+<hr/>
+<div class="admin-content">
+  <div class="row">
+    <div class="btn-new-category">
+    <%= form_tag orders_path, method: "GET" do %>
+      <%= select_tag :state,
+        options_for_select(Order.types, params[:state]),
+        include_blank: I18n.t("order.all"),
+        class: "form-control", onchange: "submit()" %>
+    <% end %>
+    </div>
+    <% if admin? %>
+      <div class="btn-new-category">
+        <%= form_tag orders_path(user_id: current_user.id), method: "GET" do %>
+          <%= search_field_tag :order_search, params[:order_search],
+            class: "form-control",
+            placeholder: I18n.t("layouts.header.search_holder") %>
+          <%= submit_tag I18n.t("layouts.header.search"),
+            class: "btn btn-default" %>
+        <% end %>
+      </div>
+      
+    <% end -%>
+  </div>
+  <div class="row">
+    <%= will_paginate @orders %>
+    <table class="table table-bordered">
+      <tr>
+        <th><%= t "admin.index" %></th>
+        <% if admin? %>
+          <th><%= t "admin.name" %></th>
+        <% end %>
+        <th><%= t "admin.total_payment" %></th>
+        <th><%= t "admin.date" %></th>
+        <th><%= t "order.state" %></th>
+        <th><%= t "admin.detail" %></th>
+        <th><%= t "admin.delete" %></th>
+      </tr>
+      <%= render partial: "order", collection: @orders %>
+    </table>
+    <%= will_paginate @orders %>
+  </div>
+</div>

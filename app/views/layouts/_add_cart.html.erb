@@ -1,0 +1,11 @@
+<%= form_tag new_cart_path, remote: true do %>
+  <div class="input-group">
+    <%= number_field_tag :quanlity, Settings.server.min_quanlity,
+      min: Settings.server.min_quanlity,max:product.quanlity, class: "form-control" %>
+    <div class="input-group-btn">
+      <%= hidden_field_tag :product_id, product.id %>
+      <%= submit_tag I18n.t("static_pages.home.add2cart"),
+        class: "btn add2cart" %>
+    </div>
+  </div>
+<% end %>

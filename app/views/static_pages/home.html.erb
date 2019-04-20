@@ -1,0 +1,103 @@
+<div class="category-featured digital">
+  <% if !@hot_products.empty? %>
+  <nav class="navbar nav-menu show-brand">
+    <div class="navbar-brand">
+      <%= link_to categories_path(is_hot: true),
+      class: "brand-name" do %>
+      <%= t "static_pages.home.hot_products" %>
+      <% end %>
+    </div>
+    <div class="nav navbar-right get-more">
+      <%= link_to categories_path(is_hot: true) do %>
+      <%= t "static_pages.home.getmore" %>
+      <% end %>
+    </div>
+  </nav>
+  <div class="product-featured clearfix">
+    <div class="row">
+      <div class="col-sm-12 category-product">
+        <% @hot_products.each do |product| %>
+        <div class="col-sm-4">
+          <div class="product-item">
+            <div class="pi-img-wrapper">
+              <%= image_tag product.product_image,
+              class: "img-responsive" %>
+              <div>
+                <%= link_to product_path(product.id),
+                class: "btn" do %>
+                <%= t "static_pages.home.view" %>
+                <% end %>
+              </div>
+            </div>
+            <h3>
+              <%= link_to product.product_name,
+              product_path(product.id) %>
+            </h3>
+            <div class="pi-price">
+              <%= t "static_pages.home.price" %>
+              <%= I18n.t("product.show.product_price",
+              price: "#{number_to_currency product.price_normal}") %>
+            </div>
+            <div class="sticker sticker-new"></div>
+            <div>
+              <%= render "layouts/add_cart", product: product %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% @categories.each do |category| %>
+  <nav class="navbar nav-menu show-brand">
+    <div class="navbar-brand">
+      <%= link_to categories_path(category_id: category.id) do %>
+      <%= category.name %>
+      <% end %>
+    </div>
+    <div class="nav navbar-right get-more">
+      <%= link_to categories_path(category_id: category.id) do %>
+      <%= t "static_pages.home.getmore" %>
+      <% end %>
+    </div>
+  </nav>
+  <div class="product-featured clearfix">
+    <div class="row">
+      <div class="col-sm-12 category-product">
+        <% category.sub_categories.each do |sub_category| %>
+        <% Product.get_limit_products(sub_category.id).each do |product| %>
+        <div class="col-sm-4">
+          <div class="product-item">
+            <div class="pi-img-wrapper">
+              <%= image_tag product.product_image,
+              class: "img-responsive" %>
+              <div>
+                <%= link_to product_path(product.id),
+                class: "btn" do %>
+                <%= t "static_pages.home.view" %>
+                <% end %>
+              </div>
+            </div>
+            <h3>
+              <%= link_to product.product_name,
+              product_path(product.id)  %>
+            </h3>
+            <div class="pi-price">
+              <%= t "static_pages.home.price" %>
+              <%= I18n.t("product.show.product_price",
+              price: "#{number_to_currency product.price_normal}") %>
+            </div>
+            <div class="sticker sticker-new"></div>
+            <div>
+              <%= render "layouts/add_cart", product: product %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
